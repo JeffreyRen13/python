@@ -1,0 +1,16 @@
+num1 = int(input())
+num2 = int(input())
+answer = num1 // num2
+if answer % 2 == 0:
+    print("divisible")
+else:
+    print("not divisible")
+
+x = int(input())
+y = int(input())
+z = int(input())
+
+a1 = min(x, y, z)
+a3 = max(x, y, z)
+a2 = (x + y + z) - a1 - a3
+print(a1, a2, a3)
