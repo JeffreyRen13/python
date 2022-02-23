@@ -1,0 +1,10 @@
+L, C, P = input().split()
+L  = int(L)
+C = int(C)
+P = int(P)
+for i in range(C):
+  x, y = input().split()
+  x = int(x)
+  y = int(y)
+  distance = x + abs(y - P)
+  print(distance)
