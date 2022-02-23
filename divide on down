@@ -1,0 +1,16 @@
+n = int(input())
+sum = 0
+for i in range(n):
+    sum = sum + int(input())
+print(sum)
+
+n = int(input())
+num = n
+for i in range(num):
+  print(n)
+  if n==1:
+    break
+  if n % 2 == 0:
+        n = n // 2
+  else:
+       n = n * 3 + 1
