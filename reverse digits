@@ -1,0 +1,9 @@
+result = 0
+a = int(input())
+while True:
+  b = a % 10
+  a = a // 10
+  result = result * 10 + b
+  if a == 0:
+    break
+print(result)
