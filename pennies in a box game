@@ -1,0 +1,43 @@
+print("Enter the number of boxes:")
+n = int(input())
+print("Enter pennies in each box:")
+arr = [int(i) for i in input().split()]
+first_player_score = 0
+second_player_score = 0
+size = len(arr)
+turn = 0 # player 1 is 0, player 2 is 1
+while(len(arr)):
+  print(arr)
+  print("player 1 score:{0}".format(first_player_score))
+  print("player 2 score:{0}".format(second_player_score))
+  if turn == 0:
+    print("Enter player 1 move (1 for leftmost,2 for rightmost,3 for undo)")
+  else:
+    print("Enter player 2 move (1 for leftmost,2 for rightmost,3 for undo)")
+  action = int(input())
+  if action == 1:
+    # pick up the leftmost item and remove the item from list
+    # add into score board.
+    leftmost = arr.pop(0)
+    if turn == 0:
+      first_player_score = first_player_score + leftmost
+    else:
+      second_player_score = second_player_score + leftmost
+  elif action == 2:
+    # pick up the rightmost item and remove it from the list and add into score board
+    rightmost = arr.pop(-1)
+    if turn == 0:
+      first_player_score = first_player_score + rightmost
+    else:
+      second_player_score = second_player_score + rightmost
+  else:
+    print("invalid move!")
+    continue
+  turn = not turn
+
+if  first_player_score > second_player_score:
+  print("Player 1 won!")
+elif first_player_score == second_player_score:
+  print("Draw!")
+else:
+  print("Player 2 wins!")
