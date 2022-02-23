@@ -1,0 +1,14 @@
+temperature, humidity = input().split()
+temperature = int(temperature)
+humidity = int(humidity)
+
+if temperature < 60:
+    if humidity < 40:
+        print(" I drink coffee")
+    else:
+        print("I eat cake")
+elif temperature >= 60:
+    if humidity < 40:
+        print("I drink iced tea")
+    else: 
+        print("I eat ice cream")'''
