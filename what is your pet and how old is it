@@ -1,0 +1,20 @@
+pet = int(input())
+age = int(input())
+if pet == 1:
+    print("you have a dog.")
+    if age <= 1:
+        print("Age Stage: Newborn or Puppy")
+    elif 1 < age <= 7:
+        print("Age Stage: Adult")
+    else:
+        print("Age Stage: Senior")
+elif pet == 2:
+    print("you have a cat.")
+    if age < 2:
+        print("Age Stage: Kitten or Junior")
+    elif 2 <= age < 7:
+        print("Age Stage: Prime")
+    else:
+        print("Age Stage: Mature, Senior, or Geriatric")
+else:
+    print("Your pet is neither dog nor cat. I have to research about it.")
