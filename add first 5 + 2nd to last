@@ -1,0 +1,11 @@
+arr = []
+result = 0
+while True:
+    x = int(input()) 
+    arr.append(x)
+    if x == 0: 
+      break
+for i in range(5):
+  result = result + arr[i]
+result = result + arr[-2]
+print(result)
