@@ -1,0 +1,25 @@
+
+matches_num = int(input())
+current_player = 1
+while True:
+  print("Number of remaining matches: {}".format(matches_num))
+  for i in range(matches_num):
+    print("*", end = ' ')
+  print("\n")
+  for i in range(matches_num):
+    print("|", end = ' ')
+
+  print("\n") 
+  print("Player {}:How many matches do you want to pick (1,2, or 3)?".format(current_player))
+  pick = int(input())
+  if pick < 1 or pick > 3:
+    print("Invalid move!")
+    continue
+  matches_num = matches_num - pick
+  if matches_num == 0:
+    break
+  if current_player == 1:
+    current_player = 2
+  else:
+    current_player = 1
+print("Player {} won the game!".format(current_player))
