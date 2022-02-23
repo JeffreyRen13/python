@@ -1,0 +1,18 @@
+secret = int(input())
+number_of_guess = 0
+while True :
+  print("Guess the number:")
+  guess = int(input())
+
+  if guess <= 0 or guess > 100:
+    print("invalid guess")
+    continue
+  number_of_guess += 1
+  if guess > secret:
+    print("go down")
+  elif guess < secret:
+    print("go up")
+  else:
+    print("correct")
+    break
+print("Number of guesses: {}".format(number_of_guess))
