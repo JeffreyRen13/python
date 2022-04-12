@@ -1,0 +1,100 @@
+#Read the size of the platform, n.
+N = int(input())
+#Read n numbers for the top row of the platform
+line1 = input().split(",")
+#Read n numbers for the bottom row of the platform.
+line2 = input().split(",")
+line1 = line1[0]
+line1 = line1.split()
+
+line2 = line2[0]
+line2 = line2.split()
+
+
+score = 0
+print("Score: {}".format(score))
+for x in range(len(line1)):
+    if x < len(line1) - 1:
+        print(line1[x], end = "")
+    else:
+        print(line1[x])
+for x in range(len(line2)):
+    if x < len(line2) - 1:
+        print(line2[x], end = "")
+    else:
+        print(line2[x])
+
+result = []
+for i in range(0, N):
+    if line2[i] == '1':
+       result.append(i)
+for i in range(N):
+    if line2[i] == '4':
+       result.append(i)
+
+# alpha maria current position
+current = result[0]
+# exit position
+exit = result[1]
+
+while True:
+
+    #Print Enter move: and read player's move.
+    print("Enter move:")
+    move = int(input())
+    
+    
+    if move == 1 :
+        target = current - 1
+    elif move == 2 :
+        target = current + 1 
+    elif move == 3:
+        target = current - 2 
+    elif move == 4:
+        target = current + 2 
+    
+    #reset previous postion into 0
+    line2[current] = 0
+    if current < target:
+        for idx in range(current + 1, target + 1):
+            if line1[idx] == '2' and idx != target:
+                score = score + 100
+                line1[idx] = '0'
+            if line2[idx] == '2' and idx == target:
+                score = score + 100
+                line2[idx] = '0'
+    else:
+        for idx in range(current-1,target-1, -1):
+            if line1[idx] == '2' and idx != target:
+                score = score + 100
+                line1[idx] = '0'
+            if line2[idx] == '2' and idx == target:
+                score = score + 100
+                line2[idx] = '0'
+    
+    success = False
+    if line2[target] == '4':
+        success = True
+    
+    line2[target] = 1
+    current = target
+    if success == False:
+        print("Score: {}".format(score))
+    for x in range(len(line1)):
+        if x < len(line1) - 1:
+            print(line1[x], end = "")
+        else:
+            print(line1[x])
+    for x in range(len(line2)):
+        if x < len(line2) - 1:
+            print(line2[x], end = "")
+        else:
+            print(line2[x])
+    if success == True:
+        print("Congratulations! You have successfully completed this game!")
+        print("Your score is: {}".format(score))
+        break
+        
+        
+        
+        
